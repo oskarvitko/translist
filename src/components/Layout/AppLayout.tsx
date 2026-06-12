@@ -34,7 +34,7 @@ export function AppLayout({ onOpenGuide }: AppLayoutProps) {
                 onClick={onOpenGuide}
                 style={{
                     position: 'fixed',
-                    top: 16,
+                    top: 'calc(16px + env(safe-area-inset-top))',
                     right: 16,
                     zIndex: 200,
                     width: 36,
@@ -54,7 +54,14 @@ export function AppLayout({ onOpenGuide }: AppLayoutProps) {
             </motion.button>
 
             {/* Контент */}
-            <div style={{ flex: 1, overflowY: 'auto', paddingBottom: 72 }}>
+            <div
+                style={{
+                    flex: 1,
+                    overflowY: 'auto',
+                    paddingBottom: 'calc(72px + env(safe-area-inset-bottom))',
+                    paddingTop: 'env(safe-area-inset-top)',
+                }}
+            >
                 {activeTab === 'search' ? <SearchPage /> : <VocabPage />}
             </div>
 
@@ -65,7 +72,8 @@ export function AppLayout({ onOpenGuide }: AppLayoutProps) {
                     bottom: 0,
                     left: 0,
                     right: 0,
-                    height: 64,
+                    height: 'calc(64px + env(safe-area-inset-bottom))',
+                    paddingBottom: 'env(safe-area-inset-bottom)',
                     background: 'rgba(20, 20, 20, 0.92)',
                     backdropFilter: 'blur(16px)',
                     WebkitBackdropFilter: 'blur(16px)',
