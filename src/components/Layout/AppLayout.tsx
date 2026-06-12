@@ -73,7 +73,6 @@ export function AppLayout({ onOpenGuide }: AppLayoutProps) {
                     left: 0,
                     right: 0,
                     height: 'calc(64px + env(safe-area-inset-bottom))',
-                    paddingBottom: 'env(safe-area-inset-bottom)',
                     background: 'rgba(20, 20, 20, 0.92)',
                     backdropFilter: 'blur(16px)',
                     WebkitBackdropFilter: 'blur(16px)',

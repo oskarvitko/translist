@@ -41,7 +41,7 @@ export function SearchPage() {
             <Input
                 value={query}
                 onChange={(e) => setQuery(e.target.value)}
-                placeholder="e.g. eloquent"
+                placeholder="слово или фраза"
                 size="large"
                 prefix={<SearchOutlined style={{ color: '#3b82f6' }} />}
                 suffix={
